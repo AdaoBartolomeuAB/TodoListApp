@@ -20,6 +20,10 @@ class TodoAdpater(  private val todos: MutableList<Todo>):RecyclerView.Adapter<T
         }
     }
 
+    fun addTodo(todo: Todo){
+
+    }
+
     private fun toggleStrikeThrough(tvTodoTitle: TextView, isChecked: Boolean){
         if (isChecked){
             tvTodoTitle.paintFlags = tvTodoTitle.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
