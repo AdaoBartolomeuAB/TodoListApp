@@ -10,11 +10,11 @@ import com.example.todolist.R.id.tvTodoTitle
 class MainActivity : AppCompatActivity() {
 
     private lateinit var todoAdpater: TodoAdpater
-    lateinit  var myRecyclerView: RecyclerView
+    lateinit  var rvTodoItems: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         todoAdpater = TodoAdpater(mutableListOf())
-        myRecyclerView.adapter = todoAdpater
+        rvTodoItems.adapter = todoAdpater
     }
 }
