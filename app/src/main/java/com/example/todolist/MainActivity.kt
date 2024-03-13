@@ -14,7 +14,7 @@ import com.example.todolist.R.id.tvTodoTitle
 class MainActivity : AppCompatActivity() {
 
     lateinit var todoAdpater: TodoAdpater
-    lateinit  var rvTodoItems: RecyclerView
+    lateinit var rvTodoItems: RecyclerView
     lateinit var btnAddTodo: Button
     lateinit var btnDeleteDoneTodo: Button
     lateinit var etTodoTitle: TextView
@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         todoAdpater = TodoAdpater(mutableListOf())
+        rvTodoItems = findViewById(R.id.rvTodoItems)
         rvTodoItems.adapter = todoAdpater
         rvTodoItems.layoutManager = LinearLayoutManager(this)
         btnAddTodo = findViewById(R.id.btnAddTodo)

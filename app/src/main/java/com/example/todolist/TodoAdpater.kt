@@ -28,6 +28,7 @@ class TodoAdpater(  private val todos: MutableList<Todo>):RecyclerView.Adapter<T
     fun deleteDoneTodo(){
         todos.removeAll { todo -> todo.isChecked }
         notifyDataSetChanged()
+
     }
 
 
@@ -53,9 +54,9 @@ class TodoAdpater(  private val todos: MutableList<Todo>):RecyclerView.Adapter<T
         holder.tvTodoTitle.text = curTodo.title
         holder.cdDone.isChecked = curTodo.isChecked
         toggleStrikeThrough(holder.tvTodoTitle,curTodo.isChecked)
-        holder.cdDone.setOnCheckedChangeListener { _, isChecked ->
+        holder.cdDone.setOnCheckedChangeListener  { _, isChecked ->
             toggleStrikeThrough( holder.tvTodoTitle,isChecked)
-            holder.cdDone.isChecked = !curTodo.isChecked
+            curTodo.isChecked = !curTodo.isChecked
         }
     }
 }
