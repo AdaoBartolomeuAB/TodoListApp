@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             if (todoTitle.isNotEmpty()){
                 val todo = Todo(todoTitle);
                 todoAdpater.addTodo(todo)
+                etTodoTitle.setText("")
             }
         }
     }
