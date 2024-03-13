@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var todoAdpater: TodoAdpater
     lateinit  var rvTodoItems: RecyclerView
     lateinit var btnAddTodo: Button
+    lateinit var btnDeleteDoneTodo: Button
     lateinit var etTodoTitle: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         rvTodoItems.adapter = todoAdpater
         rvTodoItems.layoutManager = LinearLayoutManager(this)
         btnAddTodo = findViewById(R.id.btnAddTodo)
+        btnDeleteDoneTodo = findViewById(R.id.btnDeleteDoneTodo)
         etTodoTitle = findViewById(R.id.etTodoTitle)
 
         btnAddTodo.setOnClickListener {
@@ -34,6 +36,10 @@ class MainActivity : AppCompatActivity() {
                 todoAdpater.addTodo(todo)
                 etTodoTitle.setText("")
             }
+        }
+
+        btnDeleteDoneTodo.setOnClickListener {
+            todoAdpater.deleteDoneTodo()
         }
     }
 }
